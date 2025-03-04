@@ -3,185 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>袁滚滚 个人简介</title>
+    <title>袁滚滚 - 财税服务</title>
+    
+    <!-- Open Graph（OG）协议 -->
+    <meta property="og:title" content="袁滚滚 - 专业财税服务">
+    <meta property="og:description" content="专注企业财税管理，提供高效、合规的服务，助力您的企业稳健发展。">
+    <meta property="og:image" content="./logo.jpg"> <!-- 替换LOGO地址 -->
+    <meta property="og:url" content="https://ygg.xbrooke.cn/"> <!-- 替换域名 -->
+    <meta property="og:type" content="website">
+ 
+    <!-- 微信分享优化 -->
+    <meta name="wechat-share-title" content="袁滚滚 - 专业财税服务">
+    <meta name="wechat-share-desc" content="财税专家在线服务，助您解决税务、工商注册、代理记账等问题。">
+    <meta name="wechat-share-img" content="./logo.jpg">
+
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f9f9f9;
+        * {
             margin: 0;
             padding: 0;
-            color: #333;
+            box-sizing: border-box;
         }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 36px;
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #444;
         }
         .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 20px auto;
-        }
-        .profile {
             display: flex;
+            max-width: 1100px;
+            margin: 50px auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* 左侧信息栏 */
+        .sidebar {
+            width: 25%;
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            margin-bottom: 40px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            justify-content: center; /* 让内容在侧边栏内垂直居中 */
         }
-        .profile img {
-            width: 120px;
-            height: 120px;
+        .profile-pic {
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
-            margin-right: 20px;
+            overflow: hidden;
+            border: 3px solid white;
+            margin-bottom: 15px;
         }
-        .profile h2 {
-            font-size: 28px;
-            color: #333;
-            margin: 0;
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
-        .profile p {
+        .sidebar h2 {
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .sidebar .job-title {
             font-size: 16px;
-            color: #666;
-            line-height: 1.6;
+            font-weight: 500;
+            color: #C8E6C9;
+            margin-top: 3px;
         }
-        section h2 {
-            font-size: 24px;
+        .tagline {
+            font-size: 13px;
+            font-style: italic;
+            opacity: 0.9;
+            margin: 8px 0 15px;
+            color: #E8F5E9;
+        }
+        .divider {
+            width: 70%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.5);
+            margin: 15px auto;
+        }
+
+        /* 调整联系信息居中 */
+        .contact-info {
+            width: auto;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .contact-info p {
+            font-size: 14px;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+        .contact-info a {
+            color: #FFEB3B;
+            text-decoration: none;
+            font-weight: normal;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* 微信沟通 */
+        .wechat-container {
+            margin-top: auto;
+            text-align: center;
+        }
+        .wechat-btn {
+            display: inline-block;
+            background: #FFEB3B;
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        .wechat-btn:hover {
+            background: #FFD700;
+        }
+
+        /* 右侧内容 */
+        .content {
+            width: 75%;
+            padding: 30px;
+            background: white;
+        }
+        .content h2 {
+            font-size: 22px;
             color: #4CAF50;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+        }
+        .service-card {
+            background: #fff;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
             margin-bottom: 10px;
         }
-        section h3 {
-            font-size: 20px;
-            margin-top: 20px;
+        .service-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
             color: #333;
         }
-        ul.service-list {
+        .service-list {
             list-style-type: none;
             padding: 0;
         }
-        ul.service-list li {
-            font-size: 16px;
-            margin-bottom: 10px;
-            padding-left: 20px;
+        .service-list li {
+            font-size: 14px;
+            margin-bottom: 6px;
+            padding-left: 18px;
             position: relative;
+            line-height: 1.5;
         }
-        ul.service-list li::before {
-            content: "✔️";
+        .service-list li::before {
+            content: "✔";
+            color: #4CAF50;
             position: absolute;
             left: 0;
             top: 0;
         }
-        .contact-info {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
-        .contact-info a {
-            color: #4CAF50;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 15px 0;
-            text-align: center;
-        }
-        footer p {
-            margin: 0;
-            font-size: 14px;
+
+        /* 手机端优化 */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                padding: 20px;
+            }
+            .content {
+                width: 100%;
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>个人简介</h1>
-</header>
-
 <div class="container">
-    <div class="profile">
-        <img src="./logo.jpg" alt="袁滚滚">
-        <div>
-            <h2>袁滚滚</h2>
-            <p>毕业于九江学院商务分院，主修财务管理专业，具备扎实的财务管理、税务及工商管理核心知识，拥有6年丰富的行业经验。</p>
+    <!-- 左侧信息栏 -->
+    <aside class="sidebar">
+        <div class="profile-pic">
+            <img src="./logo.jpg" alt="个人头像">
         </div>
-    </div>
+        <h2>袁滚滚</h2>
+        <p class="job-title">财税专家 | 6年从业经验</p>
+        <p class="tagline">专注企业财税管理，提供高效、合规的服务。</p>
 
-    <section>
-        <h2>教育背景</h2>
-        <p>毕业于九江学院商务分院，主修财务管理专业，系统掌握会计、税务及工商管理核心知识，具备扎实的理论基础与实务技能。</p>
+        <div class="divider"></div>
 
-        <h2>从业经验</h2>
-        <p>拥有6年财务领域实战经验，深耕企业财税服务与工商事务，精通代理记账、工商注册、变更等全流程业务。服务范围覆盖初创企业至中小型公司，以高效、合规、细致的服务赢得客户信赖。</p>
+        <div class="contact-info">
+            <p>📞 电话：<a href="tel:+8619270084546">+86-19270084546</a></p>
+            <p>📧 邮箱：<a href="mailto:1580512603@qq.com">1580512603@qq.com</a></p>
+        </div>
 
+        <!-- 微信沟通（点击跳转微信） -->
+        <div class="wechat-container">
+            <a href="weixin://contacts/profile/yuangungundeVX" class="wechat-btn"> 💬 微信沟通</a>
+        </div>
+    </aside>
+
+    <!-- 右侧内容 -->
+    <div class="content">
         <h2>核心业务范围</h2>
 
-        <h3>税务类服务</h3>
-        <ul class="service-list">
-            <li>基础税务服务：税务报道、税控设备申领、发票开具</li>
-            <li>月度/季度纳税申报（增值税、企业所得税、个税等）</li>
-            <li>税务异常处理、税务筹划优化</li>
-            <li>财税痛点解决方案：企业缺成本票/费用票的合规处理</li>
-            <li>工资社保成本优化、公转私风险管控</li>
-            <li>灵活用工财税方案设计</li>
-        </ul>
+        <div class="service-card">
+            <h3>📌 税务类服务</h3>
+            <ul class="service-list">
+                <li>税务登记、税控设备申领</li>
+                <li>增值税、企业所得税、个税申报</li>
+                <li>税务异常处理、财税筹划优化</li>
+            </ul>
+        </div>
 
-        <h3>工商类服务</h3>
-        <ul class="service-list">
-            <li>公司注册全流程：核名、执照办理、银行开户、社保开户</li>
-            <li>注册地址提供、刻章服务</li>
-            <li>工商变更服务：法人/股东变更、地址变更、经营范围变更</li>
-            <li>增资减资、股权转让、跨区迁移</li>
-        </ul>
+        <div class="service-card">
+            <h3>🏢 工商类服务</h3>
+            <ul class="service-list">
+                <li>公司注册、银行开户、社保开户</li>
+                <li>工商变更（法人/股东/地址/经营范围）</li>
+                <li>股权转让、跨区迁移</li>
+            </ul>
+        </div>
 
-        <h3>代理记账服务</h3>
-        <ul class="service-list">
-            <li>全套账务处理（凭证编制、财务报表出具）</li>
-            <li>成本费用核算、工资代发与个税申报</li>
-            <li>年度审计报告、汇算清缴</li>
-        </ul>
+        <div class="service-card">
+            <h3>📊 代理记账服务</h3>
+            <ul class="service-list">
+                <li>账务处理、财务报表</li>
+                <li>工资代发、个税申报</li>
+                <li>年度审计报告、汇算清缴</li>
+            </ul>
+        </div>
 
-        <h3>注销类服务</h3>
-        <ul class="service-list">
-            <li>公司/个体户注销（工商、税务、银行全流程）</li>
-            <li>吊销转注销、异常状态解除</li>
-            <li>银行销户、许可证同步注销</li>
-        </ul>
-
-        <h3>许可资质办理</h3>
-        <ul class="service-list">
-            <li>经营许可类：食品经营许可证、道路运输许可证、劳务派遣许可证</li>
-            <li>行业资质类：卫生许可证、二类医疗备案、烟草专卖许可证</li>
-        </ul>
-
-        <h2>服务优势</h2>
-        <ul class="service-list">
-            <li>专业高效：熟悉政策法规，全程电子化操作，缩短办理周期。</li>
-            <li>风险管控：注重企业合规性，规避财税与工商隐患。</li>
-            <li>定制方案：根据企业需求提供灵活解决方案，助力降本增效。</li>
-        </ul>
-    </section>
-
-    <div class="contact-info">
-        <h2>联系方式</h2>
-        <p>电话/微信：<a href="tel:86-19270084546">19270084546</a></p>
-        <p>邮箱：<a href="mailto:yuangungun@example.com">yuangungun@example.com</a></p>
+        <div class="service-card">
+            <h3>🚫 注销类服务</h3>
+            <ul class="service-list">
+                <li>公司/个体户工商注销</li>
+                <li>税务注销、银行账户销户</li>
+            </ul>
+        </div>
     </div>
 </div>
-
-<footer>
-    <p>深耕财税，护航企业成长 </p>
-</footer>
 
 </body>
 </html>
