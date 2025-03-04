@@ -11,7 +11,7 @@
     <meta property="og:image" content="./logo.jpg"> <!-- 替换LOGO地址 -->
     <meta property="og:url" content="https://ygg.xbrooke.cn/"> <!-- 替换域名 -->
     <meta property="og:type" content="website">
- 
+
     <!-- 微信分享优化 -->
     <meta name="wechat-share-title" content="袁滚滚 - 专业财税服务">
     <meta name="wechat-share-desc" content="财税专家在线服务，助您解决税务、工商注册、代理记账等问题。">
@@ -48,7 +48,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center; /* 让内容在侧边栏内垂直居中 */
         }
         .profile-pic {
             width: 100px;
@@ -80,16 +79,8 @@
             margin: 8px 0 15px;
             color: #E8F5E9;
         }
-        .divider {
-            width: 70%;
-            height: 1px;
-            background: rgba(255, 255, 255, 0.5);
-            margin: 15px auto;
-        }
-
-        /* 调整联系信息居中 */
         .contact-info {
-            width: auto;
+            width: 100%;
             text-align: center;
             margin-top: 10px;
         }
@@ -105,6 +96,12 @@
         }
         .contact-info a:hover {
             text-decoration: underline;
+        }
+        .divider {
+            width: 70%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.5);
+            margin: 15px auto;
         }
 
         /* 微信沟通 */
@@ -123,6 +120,7 @@
             text-decoration: none;
             margin-top: 20px;
             transition: background 0.3s;
+            cursor: pointer;
         }
         .wechat-btn:hover {
             background: #FFD700;
@@ -180,6 +178,7 @@
             .sidebar {
                 width: 100%;
                 padding: 20px;
+                background: linear-gradient(135deg, #4CAF50, #2E7D32);
             }
             .content {
                 width: 100%;
@@ -203,56 +202,67 @@
         <div class="divider"></div>
 
         <div class="contact-info">
-            <p>📞 电话：<a href="tel:+8619270084546">+86-19270084546</a></p>
+            <p>📞 电话：<a href="tel:+8619270084546">86-19270084546</a></p>
             <p>📧 邮箱：<a href="mailto:1580512603@qq.com">1580512603@qq.com</a></p>
         </div>
 
-        <!-- 微信沟通（点击跳转微信） -->
+        <!-- 复制微信号 -->
         <div class="wechat-container">
-            <a href="weixin://contacts/profile/yuangungundeVX" class="wechat-btn"> 💬 微信沟通</a>
+            <button class="wechat-btn" onclick="copyWeChat()">💬 复制微信号</button>
+            <p id="wechat-id" style="display:none;">yuangungundeVX</p>
         </div>
     </aside>
 
-    <!-- 右侧内容 -->
-    <div class="content">
-        <h2>核心业务范围</h2>
+     <!-- 右侧内容 -->
+ <div class="content">
+    <h2>核心业务范围</h2>
 
-        <div class="service-card">
-            <h3>📌 税务类服务</h3>
-            <ul class="service-list">
-                <li>税务登记、税控设备申领</li>
-                <li>增值税、企业所得税、个税申报</li>
-                <li>税务异常处理、财税筹划优化</li>
-            </ul>
-        </div>
+    <div class="service-card">
+        <h3>📌 税务类服务</h3>
+        <ul class="service-list">
+            <li>税务登记、税控设备申领</li>
+            <li>增值税、企业所得税、个税申报</li>
+            <li>税务异常处理、财税筹划优化</li>
+        </ul>
+    </div>
 
-        <div class="service-card">
-            <h3>🏢 工商类服务</h3>
-            <ul class="service-list">
-                <li>公司注册、银行开户、社保开户</li>
-                <li>工商变更（法人/股东/地址/经营范围）</li>
-                <li>股权转让、跨区迁移</li>
-            </ul>
-        </div>
+    <div class="service-card">
+        <h3>🏢 工商类服务</h3>
+        <ul class="service-list">
+            <li>公司注册、银行开户、社保开户</li>
+            <li>工商变更（法人/股东/地址/经营范围）</li>
+            <li>股权转让、跨区迁移</li>
+        </ul>
+    </div>
 
-        <div class="service-card">
-            <h3>📊 代理记账服务</h3>
-            <ul class="service-list">
-                <li>账务处理、财务报表</li>
-                <li>工资代发、个税申报</li>
-                <li>年度审计报告、汇算清缴</li>
-            </ul>
-        </div>
+    <div class="service-card">
+        <h3>📊 代理记账服务</h3>
+        <ul class="service-list">
+            <li>账务处理、财务报表</li>
+            <li>工资代发、个税申报</li>
+            <li>年度审计报告、汇算清缴</li>
+        </ul>
+    </div>
 
-        <div class="service-card">
-            <h3>🚫 注销类服务</h3>
-            <ul class="service-list">
-                <li>公司/个体户工商注销</li>
-                <li>税务注销、银行账户销户</li>
-            </ul>
-        </div>
+    <div class="service-card">
+        <h3>🚫 注销类服务</h3>
+        <ul class="service-list">
+            <li>公司/个体户工商注销</li>
+            <li>税务注销、银行账户销户</li>
+        </ul>
     </div>
 </div>
+</div>
+
+<script>
+    function copyWeChat() {
+        var wechatId = document.getElementById("wechat-id").innerText;
+        navigator.clipboard.writeText(wechatId).then(() => {
+            alert("微信号已复制：" + wechatId);
+        });
+    }
+</script>
 
 </body>
 </html>
+
